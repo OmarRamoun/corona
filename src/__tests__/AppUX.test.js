@@ -1,23 +1,21 @@
 import { fireEvent, render, within } from '@testing-library/react';
 import fetchMock from 'fetch-mock';
+import MockDate from 'mockdate';
 import { Provider } from 'react-redux';
 import App from '../App';
 import testStore from '../redux/testStore';
 import getMockCovidData from '../__mocks__/getMockCovidData';
 
-const clickElements = (elements, indexes = []) => {
-  indexes.forEach((index) => {
-    fireEvent.click(elements[index]);
-  });
-};
+global.scrollTo = jest.fn();
 
 let tree;
 describe('testing UX for the whole App', () => {
-  const url = 'https://api.covid19tracking.narrativa.com/api/';
-  fetchMock.get(url, getMockCovidData());
+  const url = 'https://api.covid19tracking.narrativa.com/api/2021-11-15';
 
   beforeEach(() => {
+    MockDate.set('2021-11-15T12:00');
     fetchMock.reset();
+    fetchMock.get(url, getMockCovidData());
     tree = render(
       <Provider store={testStore}>
         <App />
@@ -25,32 +23,34 @@ describe('testing UX for the whole App', () => {
     );
   });
 
-  test('testing homepage UX', async () => {
+  afterAll(() => {
+    MockDate.reset();
+  });
+
+  test('testing homepage, details page, navigation between both, and snapshot', async () => {
+    // homepage
     const countries = await tree.findAllByTestId('country');
-    expect(countries).toHaveLength(195);
-    const input = await tree.findByRole('textbox');
-    fireEvent.change(input, { target: { value: 'Colombia' } });
+    expect(countries).toHaveLength(38);
+    const inputCountry = await tree.findByRole('textbox');
+    fireEvent.change(inputCountry, { target: { value: 'Colombia' } });
     const country = await tree.findByTestId('country');
     expect(await within(country).findByText('Colombia')).toBeTruthy();
     expect(await tree.queryByTestId('backBtn')).toBeFalsy();
-  });
-
-  test('testing details page UX', async () => {
-    const countries = await tree.findAllByTestId('country');
-    clickElements(countries, [37]);
+    // navigation to details page
+    fireEvent.click(country);
+    // details page
     const regions = await tree.findAllByTestId('region');
     expect(regions).toHaveLength(33);
-    const input = await tree.findByRole('textbox');
-    fireEvent.change(input, { target: { value: 'Bogotá' } });
-    const country = await tree.findByTestId('region');
-    expect(await within(country).findByText('Bogotá')).toBeTruthy();
+    const inputRegion = await tree.findByRole('textbox');
+    fireEvent.change(inputRegion, { target: { value: 'Bogotá' } });
+    const region = await tree.findByTestId('region');
+    expect(await within(region).findByText('Bogotá')).toBeTruthy();
     expect(await tree.queryByTestId('backBtn')).toBeTruthy();
-    const backBtn = await tree.findAllByTestId('backBtn');
-    clickElements(backBtn, [0]);
+    // navigation to homepage
+    const backBtn = await tree.findByTestId('backBtn');
+    fireEvent.click(backBtn);
     expect(tree.queryAllByTestId('country')).toBeTruthy();
-  });
-
-  test('testing snapshot', () => {
+    // snapshot
     expect(tree).toMatchSnapshot();
   });
 });
