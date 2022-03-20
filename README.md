@@ -14,9 +14,9 @@ This is a mobile web application that features 2 pages: The homepage and the det
 
 ## Built With
 
-## Live Demo
+## Live video
 
-[Live Demo Link](https://dicodiaz-covid-metrics.netlify.app)
+[Live video Link](https://www.loom.com/share/d8fa5233765e406194b3a7c0adec5d7d)
 
 ## Built With
 
