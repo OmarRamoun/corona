@@ -14,7 +14,7 @@ This is a simple yet powerful React-Redux boilerplate for later use as a startin
 
 ## Live Demo
 
-[Live Demo Link](https://dicodiaz.me/react-redux-setup/)
+[Live Demo Link](https://www.loom.com/share/d8fa5233765e406194b3a7c0adec5d7d)
 
 ## Built With
 
