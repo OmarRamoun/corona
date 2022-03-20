@@ -16,7 +16,11 @@ This is a mobile web application that features 2 pages: The homepage and the det
 
 ## Live video
 
-[Live video Link](https://www.loom.com/share/d8fa5233765e406194b3a7c0adec5d7d)
+- [Live video Link](https://www.loom.com/share/d8fa5233765e406194b3a7c0adec5d7d)
+
+## Live Demo
+
+- [Live Demo Version](https://practical-curie-6769d6.netlify.app/)
 
 ## Built With
 
