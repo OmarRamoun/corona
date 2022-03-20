@@ -39,15 +39,15 @@ const Details = () => {
       <main className="pt-5 bg-custom1 text-white min-vh-100">
         <Container fluid="md" className="pt-1 pt-sm-2 pt-md-3 pt-lg-4 px-0">
           <Total covidDataTotal={countryCovidData} />
-          {covidData &&
-            (countryCovidData.regions.length > 0 ? (
+          {covidData
+            && (countryCovidData.regions.length > 0 ? (
               <>
                 <SearchBar value={regionValue} onChange={regionOnChange} clear={regionClear} />
                 <h2 className="text-center h6 my-2">STATS BY REGION</h2>
                 <Row xs={1} md={2} xl={3} className="mx-0 gx-0">
                   {countryCovidData.regions
-                    .filter((region) =>
-                      region.name.toLowerCase().startsWith(regionValue.toLowerCase()),
+                    .filter(
+                      (region) => region.name.toLowerCase().startsWith(regionValue.toLowerCase()),
                     )
                     .map((info) => {
                       const {

@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
-import { Button, Col, FormControl, Row } from 'react-bootstrap';
+import {
+  Button, Col, FormControl, Row,
+} from 'react-bootstrap';
 
 const SearchBar = ({ value, onChange, clear }) => (
   <Row className="mx-0 gx-0 px-2">

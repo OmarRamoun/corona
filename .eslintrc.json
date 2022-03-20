@@ -12,15 +12,16 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "extends": ["airbnb", "plugin:react/recommended", "prettier"],
-  "plugins": ["react", "react-hooks"],
+  "extends": ["airbnb", "plugin:react/recommended"],
+  "plugins": ["react"],
   "rules": {
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
     "react/react-in-jsx-scope": "off",
     "import/no-unresolved": "off",
-    "no-shadow": "off",
-    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
-    "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
+    "no-shadow": "off"
   },
-  "ignorePatterns": ["dist/", "build/"]
+  "ignorePatterns": [
+    "dist/",
+    "build/"
+  ]
 }

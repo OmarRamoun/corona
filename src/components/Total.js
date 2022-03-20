@@ -12,12 +12,30 @@ const Total = ({ covidDataTotal }) => {
   } = covidDataTotal;
   return (
     <Row xs={1} className="mx-0 gy-1 mb-2">
-      <Col>Total confirmed: {confirmedTotal}</Col>
-      <Col className="bg-custom3">Total deaths: {deathsTotal}</Col>
-      <Col>Total recovered: {recoveredTotal}</Col>
-      <Col className="bg-custom3">Today&apos;s new confirmed: {confirmedToday}</Col>
-      <Col>Today&apos;s new deaths: {deathsToday}</Col>
-      <Col className="bg-custom3">Today&apos;s new recovered: {recoveredToday}</Col>
+      <Col>
+        Total confirmed:
+        {confirmedTotal}
+      </Col>
+      <Col className="bg-custom3">
+        Total deaths:
+        {deathsTotal}
+      </Col>
+      <Col>
+        Total recovered:
+        {recoveredTotal}
+      </Col>
+      <Col className="bg-custom3">
+        Today&apos;s new confirmed:
+        {confirmedToday}
+      </Col>
+      <Col>
+        Today&apos;s new deaths:
+        {deathsToday}
+      </Col>
+      <Col className="bg-custom3">
+        Today&apos;s new recovered:
+        {recoveredToday}
+      </Col>
     </Row>
   );
 };
