@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+body {
+  font-family: gillsans, sans-serif;
+}
+
+.font-lato {
+  font-family: lato, sans-serif !important;
+}
+
+.text-custom1 {
+  color: #4369b2 !important;
+}
+
+.bg-custom1 {
+  background-color: #4369b2 !important;
+}
+
+.bg-custom2 {
+  background-color: #5176be !important;
+}
+
+.bg-custom3 {
+  background-color: #3c5e9f !important;
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+.bg-country,
+.bg-region {
+  background-color: #5176be;
+}
+
+@media screen and (max-width: 768px) {
+  .bg-country:nth-child(4n-2),
+  .bg-country:nth-child(4n-1),
+  .bg-region:nth-child(even) {
+    background-color: #3c5e9f;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .bg-country:nth-child(even),
+  .bg-region:nth-child(4n-2),
+  .bg-region:nth-child(4n-1) {
+    background-color: #3c5e9f;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .bg-country:nth-child(8n-6),
+  .bg-country:nth-child(8n-4),
+  .bg-country:nth-child(8n-3),
+  .bg-country:nth-child(8n-1),
+  .bg-region:nth-child(4n-2),
+  .bg-region:nth-child(4n-1) {
+    background-color: #3c5e9f;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .bg-country:nth-child(even),
+  .bg-region:nth-child(even) {
+    background-color: #3c5e9f;
+  }
+}
