@@ -12,23 +12,15 @@ This is a mobile web application that features 2 pages: The homepage and the det
 
 ![screenshot](./app_screenshot-2.png)
 
-## Built With
-
-## Live video
-
-- [Live video Link](https://www.loom.com/share/d8fa5233765e406194b3a7c0adec5d7d)
-
 ## Live Demo
 
-- [Live Demo Version](https://practical-curie-6769d6.netlify.app/)
+- [Live Demo Version](https://corona.omarramoun.com/)
 
 ## Built With
 
 - React
 - Redux
 - Bootstrap
-- VSCode
-- Git & GitHub
 
 ## Getting Started
 
@@ -36,8 +28,8 @@ To get this project up and running, follow these simple steps:
 
 1. Clone the repository into your machine (Or download the .zip file and extract).
 2. Open the project's folder.
-3. Run `npm install`
-4. Run `npm start`
+3. Run `yarn`
+4. Run `yarn start`
 
 ### Setup
 
